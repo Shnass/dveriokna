@@ -1,0 +1,328 @@
+extends ../layout/main
+
+block variables
+	- var title = "Окна Столицы"
+
+block content
+	section.section.section--primary
+		.w
+			header.section-header 
+				h1 Производим деревянные окна эконом
+				.h4 Идеальное решение для остекление дачи, балкона, коттеджа. Недорогие долговечные окна с премиальной фурнитурой
+			.section-content 
+				figure.banner.banner--buttoned 
+					picture
+						source(media="(max-width:767px)" srcset="static/images/content/hero-img-mobile.jpg") 
+						source(media="(min-width:768px)" srcset="static/images/content/hero-img.jpg") 
+						img(src="static/images/content/hero-img.jpg")
+					a.btn.btn-primary.btn-big(href="") Расчет окон за 1 минуту
+	section.section.section--features
+		.w
+			.section-content 
+				.ct 
+					.row 
+						.col-3.col-md-6
+							.iconed-entry
+								.icon-placeholder 
+									+icon("production")
+								.h4 Собственное производство
+						.col-3.col-md-6
+							.iconed-entry
+								.icon-placeholder 
+									img(src="static/images/content/window.svg")
+								.h4 Немецкая фурнитура
+						.col-3.col-md-6
+							.iconed-entry
+								.icon-placeholder 
+									b 30
+								.h4 Срок службы 30 лет
+						.col-3.col-md-6
+							.iconed-entry
+								.icon-placeholder 
+									+icon("swindle")
+								.h4 Лушчие эконом вариант на рынке
+
+	section.section.section--types 
+		.w
+			header.section-header 
+				h2 Производим эконом окна и евроокна
+			.section-content 
+				.tabs
+					ul.tabs-header
+						each item in[{s:'rouble',t:'Эконом',i:0},{s:'euro',t:'Евро',i:1}]
+							+tabnavi(item.t, item.i, item.s)
+					.tabs-content 
+						.tab.on(data-tab="0")
+							figure.tac
+								img(src="static/images/content/scheme-econom.png")
+						.tab(data-tab="1")
+							figure.tac
+								img(src="static/images/content/scheme-02.png")
+	section.section.section--pricing
+		.w
+			header.section-header
+				h2 Наши цены
+			.section-content
+				.table-filter
+					.ct
+						.row
+							.col-4.col-sm-12
+								select.select-custom
+									option(selected disabled) Фильтр 
+									option(value="variant-01") variant-01
+									option(value="variant-02") variant-02
+									option(value="variant-03") variant-03
+							.col-4.col-sm-12
+								select.select-custom
+									option(selected disabled) Фильтр 
+									option(value="variant-01") variant-01
+									option(value="variant-02") variant-02
+									option(value="variant-03") variant-03
+							.col-4.col-sm-12
+								select.select-custom
+									option(selected disabled) Фильтр 
+									option(value="variant-01") variant-01
+									option(value="variant-02") variant-02
+									option(value="variant-03") variant-03
+				.table-container
+					table.table.table-prices 
+						tbody 
+							tr 
+								th(rowspan="14" class="vname"): span.vorient Высота
+								th(colspan="7") Ширина
+							tr 
+								td 
+								th 500
+								th 600
+								th 700
+								th 800
+								th 900
+								th 1000
+							tr 
+								th 500
+								td 2400/2400
+								td 2400/2400
+								td 2400/2400
+								td 2400/2400
+								td 2400/2400
+								td 2400/2400
+							tr
+								th 600
+								td 2400/2400
+								td 2400/2400
+								td 2400/2400
+								td 2700/280
+								td 2400/2400
+								td 2700/280
+							tr
+								th 700
+								td 2600/2800
+								td 3100/3200
+								td 2600/2800
+								td 3100/3200
+								td 2600/2800
+								td 3100/3200
+							tr
+								th 800
+								td 2900/3100
+								td 2900/3100
+								td 2900/3100
+								td 2900/3100
+								td 2900/3100
+								td 2900/3100
+							tr
+								th 900
+								td 3200/3400
+								td 3400/3700
+								td 3200/3400
+								td 3400/3700
+								td 3200/3400
+								td 3400/3700
+							tr
+								th 1000
+								td 3500/3800
+								td 3700/4000
+								td 3500/3800
+								td 3700/4000
+								td 3500/3800
+								td 3700/4000
+							tr
+								th 1100
+								td 3800/4100
+								td 4000/4400
+								td 3800/4100
+								td 4000/4400
+								td 3800/4100
+								td 4000/4400
+							tr
+								th 1200
+								td 4100/4500
+								td 4400/4700
+								td 4100/4500
+								td 4400/4700
+								td 4100/4500
+								td 4400/4700
+							tr
+								th 1300
+								td 4500/4700
+								td 4700/5200
+								td 4500/4700
+								td 4700/5200
+								td 4500/4700
+								td 4700/5200
+							tr
+								th 1400
+								td 4500/4700
+								td 5500/5900
+								td 4700/5100
+								td 5500/5900
+								td 4700/5100
+								td 5500/5900
+							tr
+								th 1500
+								td 5100/5500
+								td 5800/6300
+								td 5100/5500
+								td 5800/6300
+								td 5100/5500
+								td 5800/6300
+							tr
+								th 1600
+								td 5100/5500
+								td 5800/6300
+								td 5100/5500
+								td 5800/6300
+								td 5100/5500
+								td 5800/6300
+
+				p Материал: клееный брус сосна (ангарская) 60х70мм, без окраски 
+				ul 
+					li Обработка биозащитным антисептиком методом окунания, возможна покраска (15 цветов + по каталогу  RAL)
+					li Стеклопакет энергосберегающий 28мм (1-камерный, по желанию 2х-камерный),
+					li Фурнитура МАСО (Австрия)-поворотные, поворотно-откидные створки), 
+					li Уплотнитель DEVENTER (Германия) 2 контура
+	section.section.section--complectation 
+		.w
+			header.section-header 
+				h2 Комплектация каждого окна
+			.section-content 
+				.tabs.tb-plain-content 
+					ul.tabs-header 
+						each item in [{s:'furniture',t:'Фурнитура',i:0},{s:'gear',t:'Механизм',i:1},{s:'packet',t:'Энергосберегающий стеклопакет',i:2},{s:'paint',t:'Вариант покраски',i:3},{s:'guard',t:'Биозащита',i:4}]
+							+tabnavi(item.t, item.i, item.s)
+					.tabs-content 
+						.tab.on(data-tab="0")
+							.h4.lg-show
+								+icon('furniture')
+								| Фурнитура   			
+							p 6 видов металлических ручек на ваш выбор и вкус
+							.ct 
+								.row.row-samples.sm-scrollable 
+									each w in [1,2,3,4,5,6]
+										.col-2 
+											p Наименование №#{w}
+											img(src="static/images/content/coloring-0"+w+".png")
+						.tab(data-tab="1")
+							.h4.lg-show 
+								+icon('gear')
+								| Механизм   			
+							.scheme
+								h3 Многозапорный механизм запирания.
+								p От 2-х до 5-ти запорных цапф (количество зависит от размера окна).
+								img(src="static/images/content/mechanism.png")
+						.tab(data-tab="2")
+							.h4.lg-show 
+								+icon('packet')
+								| Энергосберегающий стеклопакет   			
+							.media
+								figure: img(src="static/images/content/energy-scheme.png")
+								.media-description 
+									h3 Энергосберегающие стеклопакеты
+									p Тончайший слой серебра наносится на поверхность в процессе  производства степлопакета. Это никак не влияет на прозрачность  и на способность солнца нагревать помещение, но теперь тепло, которое аккумулируется обстановкой, не может вырваться на улицу!
+									p: b Такие окна сохраняют до 97% тепловой энергии.
+						.tab(data-tab="3")
+							.h4.lg-show 
+								+icon('paint')
+								| Вариант покраски   			
+							figure.palette 
+								img(src="static/images/content/palette.jpg")
+						.tab(data-tab="4")
+							.h4.lg-show 
+								+icon('guard')
+								| Биозащита   			
+							figure
+								img(src="static/images/content/bioguard.jpg")
+	section.section.section--banner 
+		.w
+			.banner
+				img(src="static/images/content/action.jpg")
+				.banner-content 
+					.h0 Акция
+					.h3 До конца июня 
+					p Механизм микрощелевого проветривания фото на #[nobr поворотно-откидную] створку в подарок.
+					a.btn.btn-primary.btn-big(href="") Расчитать стоимость за 1 минуту
+	section.section.section--process 
+		.w
+			.slideshow-wrap 
+				.slideshow-header 
+					.slideshow-header-wrap
+						h2 Как мы создаем окна
+						.slideshow(data-controls="controls" data-affects="slider-images") 
+							.slide: p Для производства окон используется клееный брус из сосны, лиственницы, дуба. 
+							.slide: p На первом этаапе ламели отправляются в сушильную камеру для достижения влажности в диапозоне 8-12%
+							.slide: p После сушки вырезаются дефекты: сучки, сколы, синева, смоляные карманы 
+				.slideshow-images 
+					.slideshow(id="slider-images")
+						.slide: img(src="static/images/content/process-slider-01.jpg")
+						.slide: img(src="static/images/content/process-slider-01.jpg")
+						.slide: img(src="static/images/content/process-slider-01.jpg")
+	section.section.section--benefits.bg-coffee 
+		.w
+			header.section-header 
+				h2 Почему наши окна лучше окон сетевых магазинов
+			.section-content 
+				ol.benefits 
+					li Почему наши окна лучше окон сетевых магазинов
+					li Используем сибирскую древесину для склейки бруса 
+					li Контроль качества каждого выпускаемого изделия
+					li На выбор не только однокамерный пакет, но и двукамерный. Используем энергосберегающее стекло
+					li Используем скрытый монтаж штапика. 
+					li Немецкая металлическая фурнитура на выбор из 6 цветов в отличие от пластиковой недолговечной.
+					li Используем петли с регулировкой + декоративные накладки в цвет ручек в отличие от только повороных механизмов.
+	section.section.section--production
+		.w
+			header.section-header 
+				h2 Как мы работаем 
+			.section-content 
+				.ct 
+					.row 
+						.col-4.col-md-6.col-sm-12 
+							.iconed-entry
+								.icon-placeholder 
+									+icon("manufacturing")
+								.h4: b Производство
+								p Наша продукция — это результат высокотехнологической инженерной мысли, многолетнего опыта и уникальных разработок, благодаря которым вы получите не просто красивые, а стойкие к российским погодным сложностям окна из массива сосны.
+						.col-4.col-md-6.col-sm-12 
+							.iconed-entry
+								.icon-placeholder 
+									+icon("delivery")
+								.h4: b Доставка
+								p Наша продукция — это результат высокотехнологической инженерной мысли, многолетнего опыта и уникальных разработок, благодаря которым вы получите не просто красивые, а стойкие к российским погодным сложностям окна из массива сосны.
+						.col-4.col-md-6.col-sm-12 
+							.iconed-entry
+								.icon-placeholder 
+									+icon("montage")
+								.h4: b Монтаж
+								p Наша продукция — это результат высокотехнологической инженерной мысли, многолетнего опыта и уникальных разработок, благодаря которым вы получите не просто красивые, а стойкие к российским погодным сложностям окна из массива сосны.
+	section.section.section--portfolio
+		.w
+			header.section-header 
+				h2 Наши работы
+			.section-content 
+				.ct
+					.row.row-portfolio.sm-scrollable 
+						each w, i in ['Окна из листвинницы','Окна из дуба','Окна из сосны','Деревянные окна с наличниками','Деревянные окна ОСВ','Балконный блок']
+							.col-4 
+								.catalog-unit 
+									figure: img(src="static/images/content/portfolio-0"+(i+1)+".jpg")
+									p #{w}

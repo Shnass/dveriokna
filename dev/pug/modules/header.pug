@@ -1,0 +1,26 @@
+header.header
+	.header-top 
+		.w 
+			.header-logo
+				a(href="/")
+					img(src="static/images/common/logo.png" alt="")
+			.header-contacts
+				.header-title.sm-hide Деревянные окна со стеклопакетами. Производство, продажа и установка евроокон в Москве
+					span 15 ЛЕТ НА РЫНКЕ
+				.header-phone.sm-hide 
+					address
+						a(href="tel:+74959895155") +7 (495) 989-51-55
+						small г. Москва
+			.header-action
+				span Скидки до 20%!
+			a.sm-show.navi-toggle(href="")
+				+icon('burger')
+	.header-navi
+		a.sm-show.navi-close(href="")
+			+icon('cross')
+		.w
+			nav
+				ul 
+					each val in ["Главная","Окна из дерева","Цены и сроки","Пластиковые окна","Двери","Шкафы купе","Галерея","FAQ","Контакты"]
+						+navi(val)
+

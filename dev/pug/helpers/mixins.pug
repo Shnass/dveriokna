@@ -1,0 +1,17 @@
+mixin icon(name,mod)
+	- mod = mod || ''
+	svg(class="icon icon-" + name + ' ' + mod)
+		use(xlink:href="static/images/sprite/symbol/sprite.svg#" + name)
+
+mixin navi(name,link)
+	- link = link || ''
+	li 
+		a(href=link) #{name}
+
+mixin tabnavi(name,id,icon)
+	- id = id || 0
+	- icon = icon || false
+	li(data-tab=id) 
+		a(href="") 
+			+icon(icon) 
+			| #{name}
