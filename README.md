@@ -1,1 +1,1 @@
-# oknastolicy
+# dveriokna
