@@ -126,7 +126,7 @@ function clean() {
 	// TODO 
 }
 
-const dev = gulp.parallel(pug2html, scss2css, script, imageMin, fonts)
+const dev = gulp.parallel(pug2html, scss2css, script, imageMin, fonts, svgSpriteBuild)
 
 exports.default = gulp.series(dev, watch)
 exports.build = gulp.series(setMode(true), dev)
